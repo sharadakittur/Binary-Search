@@ -1,6 +1,6 @@
 nov = input("How many items in the list?") #stands for number of values
 lst = []
-for x in r:
+for x in range(int(nov)):
 	val = input("What is a value?")
 	lst.append(val)
 item = input("What item are you looking for?")
@@ -13,11 +13,15 @@ def binary(lst, itm):
   half = round(len(lst)/(2**exp))
   for y in range(0, half):
     if lst[y] == itm:
-      print(y + 1)
+      return y
   for z in range(0, half):
     if nlst[z] == itm:
-      print(len(lst) - (z)) 
+      return len(lst) - (z + 1) 
   del lst[0:round(len(lst)/2)]
   exp += 1
 
-binary(lst,item)
+answer = binary(lst,item)
+if answer == None:
+  print("The item is not there in the list.")
+else:
+  print(answer)
