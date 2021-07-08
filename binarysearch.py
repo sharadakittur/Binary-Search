@@ -1,19 +1,23 @@
-lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+nov = input("How many items in the list?") #stands for number of values
+lst = []
+for x in r:
+	val = input("What is a value?")
+	lst.append(val)
+item = input("What item are you looking for?")
+
 def binary(lst, itm):
-	nlst = []
-	for x in range(0, len(lst) - 1, -1):
-		nlst.append(x)
-	exp = 1
-	half = len(lst)/(2**exp)
-	for y in range(half):
-		if lst[y] == itm:
-			return y
-	del lst[0:round(len(lst)/2)]
-	for z in range(half):
-		print(z)
-		if nlst[z] == itm:
-			return z
-	del nlst[0:round(len(lst)/2)]
-	exp += 1
-	
-print(binary(lst, 3))
+  nlst = []
+  for x in lst:
+    nlst.insert(0,x)
+  exp = 1
+  half = round(len(lst)/(2**exp))
+  for y in range(0, half):
+    if lst[y] == itm:
+      print(y + 1)
+  for z in range(0, half):
+    if nlst[z] == itm:
+      print(len(lst) - (z)) 
+  del lst[0:round(len(lst)/2)]
+  exp += 1
+
+binary(lst,item)
